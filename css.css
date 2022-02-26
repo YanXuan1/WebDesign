@@ -1,0 +1,126 @@
+/* #mainContainer {
+   margin:0 auto;  
+  width:1200px;   
+  border: 1px solid red;
+  background-color: ;
+  ;
+}
+*/
+.container {
+  background-color: white;
+  border-radius: 10px;
+  height:1000px;
+  background: linear-gradient(rgb(255, 117, 0), rgb(255, 255, 255))
+} 
+
+
+#navs{ background-color: rgb(250, 172, 48);}
+#navs a{ color: white}
+
+#Taobao{ color: white}
+#search{ width:auto;}
+footer {
+  width: auto;
+  height: auto;
+  background-color: #f5f5f5;
+}
+
+footer .top {
+
+  display: flex;
+}
+footer .top .col {
+  height: 100%;
+  width: auto;
+  padding-top: 10px;
+  text-align:center;
+  margin-left: -10px;
+
+}
+footer .top .col li {
+  list-style: none;
+  margin-bottom: 2px;
+  font-size: 10px;
+  text-align:inherit;
+}
+h4{
+  font-size: 12px;
+  padding-left: 24px;
+}
+
+.navFooterLine {
+  font-family: inherit;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  text-align: center;
+  line-height: 30px;
+  white-space: nowrap;
+  background-color: rgb(255, 132, 0);
+}
+div span a{
+color:white
+}
+
+a {
+text-decoration: none;
+}
+
+#pageNav{
+  margin-top: 50px;
+}
+
+
+/* 新增 */
+#section1{
+  height: 1200px; 
+  margin-top: 20px;
+  padding-top: 10px;
+
+}
+#section1 .card-title{
+  font-size: 30px;
+}
+#section1 .card-text{
+  font-size: 20px;
+}
+
+.Contact{
+         left:50%;
+         background-color:white;
+        }
+
+/* 新增 */
+@media only screen and (max-width: 1024px) {
+  #section1{
+    height: 50%;
+  }
+  #section1 h1{
+    font-size: 15px;
+  }
+  #section1 .card-text{
+    font-size: 10px;
+  }
+
+}
+@media only screen and (max-width: 768px) {
+  #section1{
+    height: 75%;
+  }
+  #section1 .card .card-img-overlay .card-title{
+    font-size: 15px;
+  }
+  #section1 .card .card-img-overlay .card-text{
+    display: none;
+    
+  }
+  #section1 .card .card-img-overlay button{
+    height: 25px;
+    font-size: 8px;
+    
+  }
+
+  #section2 {
+    height: 1700px;
+
+  }
+}
