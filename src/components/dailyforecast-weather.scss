@@ -1,0 +1,76 @@
+.dailyforecast {
+    background: #ebf4f8;
+    border-radius: 7px ;
+    margin: 15px;
+    padding: 5px;
+    width: 80%;
+    margin-top: 1%;
+    margin-left: 10%;
+    opacity: 0.9;
+    &-title {
+        margin: 10px auto 10px 15px;
+        text-align:center;
+        color: #3b4e8a;
+    }
+
+    &-items {
+        display: flex;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            width: 7px;
+          }
+      
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-color: transparent;
+          }
+      
+          &::-webkit-scrollbar-thumb {
+            background-color: #9eb9eb;
+            border-radius: 10px;
+          }
+    }
+
+    &-item {
+        display: inline-block;
+        border-right: 1px solid #7476dd;
+        padding: 15px;
+        height: 400px;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        &:last-of-type{
+            border-right: 0;
+        }
+
+        &-hour,&-description,&-max,&-min
+        {font-weight: 400;
+            color: rgb(54, 51, 102);
+            text-align: center;
+        font-size:20px;}
+        &-date{
+            font-weight: 400;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        &-temp {
+            font-weight: 600;
+            color: #000;
+            font-size:26px;
+        }
+
+    
+    }
+
+}
+
+.button{
+    width: 100px;
+    height: 30px;
+    color: rgb(16, 82, 121);
+    background-color: rgb(188, 221, 235);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 14px;
+}

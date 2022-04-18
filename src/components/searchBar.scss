@@ -1,0 +1,30 @@
+.search-bar{
+    width: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    margin-right: auto;
+    &-form{
+        display:flex;
+    }
+    &-btn,&-input{
+        background: transparent;
+        border:1px solid #fff;
+        font-size: 20px;
+        color: #FFFFFF;
+    }
+    &-input{
+        border-left: 1px;
+        border-bottom-right-radius:7px ;
+        border-top-right-radius:7px; 
+        height:40px;
+        flex-grow: 1;
+        text-align: center;
+    }
+    &-btn{ 
+        border-right: 1px;
+        border-bottom-left-radius:7px ;
+        border-top-left-radius:7px; 
+        
+    }
+}
