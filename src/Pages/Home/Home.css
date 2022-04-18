@@ -1,0 +1,17 @@
+#home{
+    background-color: antiquewhite;
+    padding-bottom: 2%;
+    padding-top: 6%;
+}
+img{
+    height: 500px;
+    width: 200px;
+}
+#card{
+    /* margin-top: 4%; */
+    margin-left: 30%;
+    width: 650px;
+    height: 800px;
+    text-align: center;
+    font-size: larger;
+}

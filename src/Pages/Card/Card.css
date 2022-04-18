@@ -1,0 +1,17 @@
+.cardtotal {
+    height: 70px;
+    width: 350px;
+    text-align: center;
+    font-size: larger;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding-top: 1%;
+    margin-left: 40%;
+    padding-left: 10px;
+    margin-bottom: 2%;
+    background-color:rgb(252, 252, 252) ;
+    /* -webkit-backdrop-filter: drop-shadow(0px 0px 5px #666) ; */
+    /* WebkitFilter: "drop-shadow(0px 0px 5px #666)"; */
+    filter: drop-shadow(0px 0px 5px #666);
+}
