@@ -1,0 +1,448 @@
+body{
+  background-image: url("../images/background.png");
+}
+.wrapper{
+  width: 80%;
+  position: relative;
+  margin: auto;
+  background-color: #fcf8fc;
+  box-shadow: 10px 10px 5px #b6a3b8;
+  opacity: 0.85;
+  border-radius: 8px;
+}
+header{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: #dabbd8;
+  opacity: 0.75;
+  border-radius: 8px;
+}
+header h1{
+  padding: 10px;
+  text-shadow: 2px 2px 5px #473a47;
+  color: #5a2b57;
+  font-style: oblique;
+}
+
+main{   
+  margin-top: -20px;
+  margin-left: 160px;
+  padding: 10px;
+  background-color: rgb(252, 235, 252);
+  border-radius: 8px;
+  position: relative;
+}
+#photo{
+  float: left;
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  margin-left: 150px;
+  margin-top: 0px;
+  box-shadow: 5px 5px 10px #8a6183;
+  border-radius: 2px;
+}
+
+.personalgallery { 
+  
+  margin-top: -20px;
+  width: 100%;
+  height: 170px;
+  /* border: 2px solid red; */
+}
+.personalgallery ul {
+  width: 100%;
+  padding-bottom: 2px;
+  
+  /* width: 600px;  */
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  list-style-type: none; 
+}
+.personalgallery li { 
+  display: inline; 
+  float: left; 
+padding: 10px;
+}
+#travel{ 
+  width: 210px;
+  height: 150px;
+  border-style: none; 
+  border-radius: 2px;
+  float: left;
+}
+.personalgallery a { 
+  text-decoration: none; 
+  color: #333; 
+font-style: oblique; 
+  font-weight: bold;
+  color: rgb(64, 35, 70);
+}
+.personalgallery span { 
+  display: none; 
+}    
+.personalgallery a:hover span { 
+  display: block; 
+  position: absolute;
+top: 242px; 
+left: 930px; 
+text-align: center; 
+  background-color: rgb(252, 235, 252);
+  border-radius: 4px;
+}
+
+a{
+  text-decoration: none;
+  color: #351632;
+}
+
+nav { 
+  float: left;
+  width: 150px;
+  letter-spacing:0.1em;
+  font-weight: bold;
+  font-style: oblique;
+} 
+
+nav ul { 
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+}
+nav li { 
+  border-bottom: 1px solid #d5a9e2;
+}
+nav a { 
+  text-decoration: none; 
+  display: block;
+  padding: 15px;
+  transition: background-color 2s linear;
+}
+nav a:link { 
+  color: #532d58; 
+}
+nav a:visited { 
+  color: #be64be; 
+}
+nav a:hover {  
+  color: #a895ac;
+  background-color: #e2bce7;
+}
+
+footer{
+  text-align: center;
+  font-style: oblique;
+  background-color: #dabbd8;
+  padding: 10px;
+  border-radius: 8px;
+  color: #351632;
+}
+
+/* h3{
+  margin-top: 8px;
+  text-align: left;
+  font-weight: 700;
+  font-style: oblique;
+  color: rgb(78, 56, 78);
+} */
+
+.list1{
+  width: 150px;
+  height: 204px;
+  position: fixed;
+  left: 0;
+  top: 29%;
+  margin-top: -102px;
+  font-weight: 700;
+  font-style: oblique;
+}
+.list2{
+  width: 150px;
+  height: auto;
+  border: 1px solid rgb(252, 249, 251);
+  background: rgb(189, 150, 184);
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-size: 16px;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+.list2 ul{
+  width: 150px;
+  height: auto;
+  display: none;
+}
+.list2:hover ul{
+  display: block;
+}
+.list2 ul li{
+  list-style-type: none;
+  width: 150px;
+  height: auto;
+  border-bottom: 1px solid rgb(141, 96, 137);
+  background: white;
+  text-align: center;
+  line-height: 40px;
+  color: rgb(59, 27, 59);
+  position: relative;
+  cursor: pointer;
+}
+.tit{
+  width: 150px;
+  height: 40px;
+}
+.list3{
+  width: 150px;
+  height: auto;
+  position: absolute;
+  left: 150px;
+  top: 0;
+  display: none;
+}
+.list2 ul li:hover .list3{
+  display: block;
+}
+.child{
+  width: 150px;
+  height: 40px;
+  border-bottom: 1px solid rgb(252, 251, 251);
+  background: rgb(223, 199, 221);
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+#skills{
+  margin-left: 5%;
+  width: 90%;
+  height: 110px;
+  margin-bottom: 20px;
+  position: relative;
+  background: rgb(253, 251, 253);
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #8a6183;
+}
+
+#skills dl dd{
+  list-style-image: url("/images/icon.png");
+}
+
+#skills img{
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #8a6183;
+}
+
+dt{
+  padding-top: 10px;
+  padding-left: 15px;
+  text-align: left;
+  font-weight: bold;
+  font-style: oblique;
+  color: #351632;
+  font-size: 22px;
+}
+
+dd{
+  padding-top: 5px;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: 600;
+  color: #5a2b57;
+}
+
+#message{
+  margin-left: 18%;
+  text-align: left;
+  width: 60%;
+  height: 80px;
+  font-size: 15px;
+  font-style: oblique;
+  color: #351632;
+}
+
+button{
+  margin-top: 5px;
+  margin-left: 40%;
+  border-radius: 5px;
+  background-color: #e1c6e1;
+  background-image: linear-gradient(0deg, #e1c6e1 0%, #f5d8f3 50%, #ffffff 100%);
+  font-weight: 700;
+  font-style: oblique;
+  color: #62407e;
+
+}
+
+@media only screen and (max-width: 1024px) {
+	body {
+        margin: 0; 
+        background-color: #e1bbf0;
+    }
+	.wrapper { 
+        width: auto; 
+        margin: 0; 
+        position:relative;
+    }                                                              
+	main { 
+        margin-left: 0; 
+    }
+	nav { 
+        float: none; 
+        width: auto; 
+        height: 70px;
+    }
+	nav li { 
+        display: inline-block; 
+        padding: 0.5em; 
+    }
+	nav ul { 
+        text-align: center; 
+    }
+	nav a { 
+        border-style: none; 
+    }
+	h1, h3 {
+         font-size: 120%; 
+    }
+    h3{
+        position: relative;
+        margin-top: 5%;
+        padding-top: 25px;
+        text-align: center;
+        font-weight: 700;
+        font-style: oblique;
+        color: rgb(78, 56, 78);
+    }
+    .personalgallery { 
+        margin-top: 18%;
+        padding-top: 10px;
+        width: 100%;
+        height: 800px;
+        /* border: 2px solid red; */
+    }
+    .personalgallery a:hover span { 
+        display: block; 
+        position: absolute;
+        top: 67%; 
+        left: 350px; 
+        text-align: center; 
+        background-color: rgb(252, 235, 252);
+        border-radius: 4px;
+    }
+    #photo{
+        float: left;
+        position: relative;
+        width: 150px;
+        height: 200px;
+        margin-left: 100px;
+        margin-top: 0px;
+        box-shadow: 5px 5px 10px #8a6183;
+        border-radius: 2px;
+    }
+    #personaltable{
+        position: absolute;
+        margin-left: 150px;
+    }
+} 
+@media only screen and (max-width: 768px) {
+    .wrapper { 
+        min-width: 0; 
+    }
+	header h1 { 
+        padding-left: 0; 
+    }
+	h1, h3 { 
+        font-size: 100%; 
+    }
+    #photo{
+        float: left;
+        position: relative;
+        width: 150px;
+        height: 200px;
+        margin-left: 40%;
+        margin-top: 0px;
+        box-shadow: 5px 5px 10px #8a6183;
+        border-radius: 2px;
+    }
+    #personaltable{
+        margin-top: 220px;
+        position: absolute;
+        margin-left: 0px;
+        overflow: auto;
+        display: block;
+    }
+
+    h3{
+        position: relative;
+        /* margin-top: 15%; */
+        margin-top: 100px;
+        padding-top: 25px;
+        text-align: center;
+        font-weight: 700;
+        font-style: oblique;
+        color: rgb(78, 56, 78);
+    }
+	span { 
+        font-size: 80%; 
+    } 
+  	figure { 
+        display: none;
+    }
+    nav { 
+        float: none; 
+        width: auto; 
+        height: 170px;
+    }
+ 	nav, nav ul, nav li { 
+        padding: 0; 
+    }
+ 	nav li { 
+         display: block; 
+    }
+    nav a { 
+        display: block; 
+      	padding: 0.5em 0;
+        border-bottom: 2px ridge #943ab8; 
+    }
+    .personalgallery { 
+        margin-bottom: 50%;
+        padding-top: 60%;
+        width: 100%;
+        height: 800px;
+        /* border: 2px solid red; */
+    }
+    .personalgallery a:hover span { 
+        display: block; 
+        position: absolute;
+        top: 28%; 
+        left: 20px; 
+        text-align: center; 
+        background-color: rgb(252, 235, 252);
+        border-radius: 4px;
+    }
+    button{
+      margin-top: 5px;
+      margin-left: 30%;
+      border-radius: 5px;
+      background-color: #e1c6e1;
+      background-image: linear-gradient(0deg, #e1c6e1 0%, #f5d8f3 50%, #ffffff 100%);
+      font-weight: 700;
+      font-style: oblique;
+      color: #62407e;
+    
+    }
+    #skills{
+      margin-left: 5%;
+      width: 90%;
+      height: 120px;
+      margin-bottom: 20px;
+      position: relative;
+      background: rgb(253, 251, 253);
+      text-align: left;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px #8a6183;
+    }
+}
