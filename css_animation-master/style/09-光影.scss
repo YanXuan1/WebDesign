@@ -1,0 +1,108 @@
+body {
+  background: #15194e;
+  margin: 0;
+}
+
+$bubble-count: 30;
+$sway-type: "sway-left-to-right", "sway-right-to-left";
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+@function sample($list) {
+  @return nth($list, random(length($list)));
+}
+
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  left: var(--bubble-left-offset);
+  bottom: -8%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  border-radius: 50%;
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay)
+      ease-in infinite,
+    blink-sm var(--bubble-blink-duration) var(--bubble-blink-delay) ease-in
+      infinite;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #aaa8b2;
+    border-radius: inherit;
+    opacity: var(--bubble-opacity);
+    filter: blur(var(--bubble-blur));
+    animation: var(--bubble-sway-type) var(--bubble-sway-duration)
+      var(--bubble-sway-delay) ease-in-out alternate infinite;
+  }
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-left-offset: #{random_range(0vw, 100vw)};
+      --bubble-radius: #{random_range(1vw, 10vw)};
+      --bubble-float-duration: #{random_range(6s, 12s) * 2};
+      --bubble-float-delay: #{random_range(0s, 4s)};
+      --bubble-sway-duration: #{random_range(4s, 6s)};
+      --bubble-sway-delay: #{random_range(0s, 4s)};
+      --bubble-sway-type: #{sample($sway-type)};
+      --bubble-opacity: #{random_range(20, 90) / 100};
+      --bubble-blink-duration: #{random_range(6s, 12s) * 1};
+      --bubble-blink-delay: #{random_range(0s, 1s)};
+      --bubble-blur: calc(#{random_range(150, 300) / 100} * 1px);
+    }
+  }
+}
+
+@keyframes blink-sm {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes float-up {
+  100% {
+    transform: translateY(-175vh) rotateZ(0);
+  }
+}
+
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(-10vw) rotateZ(0);
+  }
+
+  to {
+    transform: translateX(10vw) rotateZ(0);
+  }
+}
+
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(10vw) rotateZ(0);
+  }
+
+  to {
+    transform: translateX(-10vw) rotateZ(0);
+  }
+}

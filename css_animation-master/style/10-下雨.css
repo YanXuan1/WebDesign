@@ -1,0 +1,535 @@
+body {
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+.drop {
+  --drop-width: 1px;
+  --drop-height: 72px;
+  position: absolute;
+  left: var(--drop-left, 0);
+  bottom: var(--drop-bottom, 100%);
+  width: var(--drop-width);
+  height: var(--drop-height);
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  animation: fall var(--drop-fall-duration, 1s) var(--drop-fall-delay, 0s) linear infinite;
+}
+
+.drop:nth-child(1) {
+  --ratio: calc(100 / 50);
+  --seed: calc(479 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(2) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2079 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(3) {
+  --ratio: calc(100 / 50);
+  --seed: calc(5104 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(4) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1047 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(5) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9486 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(6) {
+  --ratio: calc(100 / 50);
+  --seed: calc(8508 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(7) {
+  --ratio: calc(100 / 50);
+  --seed: calc(3479 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(8) {
+  --ratio: calc(100 / 50);
+  --seed: calc(3815 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(9) {
+  --ratio: calc(100 / 50);
+  --seed: calc(7730 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(10) {
+  --ratio: calc(100 / 50);
+  --seed: calc(8401 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(11) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9655 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(12) {
+  --ratio: calc(100 / 50);
+  --seed: calc(5759 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(13) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1695 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(14) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9487 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(15) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4474 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(16) {
+  --ratio: calc(100 / 50);
+  --seed: calc(6793 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(17) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1650 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(18) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4556 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(19) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4558 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(20) {
+  --ratio: calc(100 / 50);
+  --seed: calc(5653 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(21) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9140 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(22) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9385 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(23) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9381 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(24) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2315 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(25) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1289 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(26) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9779 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(27) {
+  --ratio: calc(100 / 50);
+  --seed: calc(515 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(28) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4211 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(29) {
+  --ratio: calc(100 / 50);
+  --seed: calc(7633 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(30) {
+  --ratio: calc(100 / 50);
+  --seed: calc(5379 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(31) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9489 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(32) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1728 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(33) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2837 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(34) {
+  --ratio: calc(100 / 50);
+  --seed: calc(8488 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(35) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4510 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(36) {
+  --ratio: calc(100 / 50);
+  --seed: calc(7016 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(37) {
+  --ratio: calc(100 / 50);
+  --seed: calc(3619 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(38) {
+  --ratio: calc(100 / 50);
+  --seed: calc(7572 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(39) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2968 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(40) {
+  --ratio: calc(100 / 50);
+  --seed: calc(7418 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(41) {
+  --ratio: calc(100 / 50);
+  --seed: calc(9452 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(42) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2142 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(43) {
+  --ratio: calc(100 / 50);
+  --seed: calc(5413 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(44) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4030 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(45) {
+  --ratio: calc(100 / 50);
+  --seed: calc(8651 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(46) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2876 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(47) {
+  --ratio: calc(100 / 50);
+  --seed: calc(3498 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(48) {
+  --ratio: calc(100 / 50);
+  --seed: calc(2636 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(49) {
+  --ratio: calc(100 / 50);
+  --seed: calc(1308 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+.drop:nth-child(50) {
+  --ratio: calc(100 / 50);
+  --seed: calc(4111 / 100);
+  --seed-percent: calc(var(--seed) / 100);
+  --drop-left: calc(var(--i) * var(--ratio) * 1vw);
+  --drop-bottom: calc(100% + 100 / 50 / 100 * 1%);
+  --drop-fall-duration: calc(1s + calc(var(--seed-percent) * 0.1 * 1s));
+  --drop-fall-delay: calc(var(--seed-percent) * 1s);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(105vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(105vh);
+    opacity: 0;
+  }
+}

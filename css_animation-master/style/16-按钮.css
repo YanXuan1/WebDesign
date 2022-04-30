@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f7f7fd;
+}
+
+.btn {
+  height: 3em;
+  width: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cut {
+  --cut-border-width: 3px;
+  --cut-slant: 0.5em;
+  --cut-triangle-width: var(--cut-slant);
+  --cut-color: #4ec0e9;
+  --cut-bg: transaparent;
+  --cut-border-color: #4ec0e9;
+  --cut-triangle-bg: #4ec0e9;
+  color: var(--cut-color);
+  background: var(--cut-bg);
+  border: none;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--cut-border-width) var(--cut-border-color);
+  clip-path: polygon(0 calc(100% - var(--cut-slant)), var(--cut-slant) 100%, 100% 100%, 100% var(--cut-slant), calc(100% - var(--cut-slant)) 0, 0 0);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-cut::before {
+  position: absolute;
+  bottom: var(--cut-border-width);
+  left: var(--cut-border-width);
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--cut-triangle-width) 0 0 var(--cut-triangle-width);
+  border-color: transparent transparent transparent var(--cut-triangle-bg);
+  backface-visibility: hidden;
+}
+
+.btn-cut::after {
+  position: absolute;
+  top: var(--cut-border-width);
+  right: var(--cut-border-width);
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 var(--cut-triangle-width) var(--cut-triangle-width) 0;
+  border-color: transparent var(--cut-triangle-bg) transparent transparent;
+  backface-visibility: hidden;
+}
+
+.btn-cut:hover {
+  --cut-color: white;
+  --cut-bg: #4ec0e9;
+}
