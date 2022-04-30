@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Table</title>
+    <style>
+        label {	float: left;
+                width: 150px;}
+          #container{
+              width: 700px;
+              margin: auto;
+              text-align: center;
+              background-color: beige;
+          } 
+          main{
+              padding: 50px;
+          }
+      </style>
+      <script language="JavaScript" type="text/JavaScript" src="CookieFunctions.js"></script>
+      
+</head>
+<body>
+    <div id="container">
+        <table border="1px" style='margin:auto;'>
+            <tr>
+                <td colspan="2">Personal Information</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td id="title"></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td id="firstName"></td>
+            </tr>  
+            <tr>
+                <td>Last Name</td>
+                <td id="lastName"></td>
+            </tr>         
+            <tr>
+                <td>Email Id</td>
+                <td id="emailId"></td>
+            </tr>  
+            <tr>
+                <td>Phone Number</td>
+                <td id="phoneNumber"></td>
+            </tr>
+            <tr>
+                <td>Street Address 1</td>
+                <td id="streetAddress1"></td>
+            </tr>   
+            <tr>
+                <td>Street Address 2</td>
+                <td id="streetAddress2"></td>
+            </tr> 
+            <tr>
+                <td>City</td>
+                <td id="city"></td>
+            </tr> 
+            <tr>
+                <td>State</td>
+                <td id="state"></td>
+            </tr> 
+            <tr>
+                <td>ZipCode</td>
+                <td id="zipcode"></td>
+            </tr> 
+            <tr>
+                <td>How did you hear</td>
+                <td id="sources"></td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td id="skills"></td>
+            </tr> 
+            <tr>
+                <td>Choose</td>
+                <td id="skillsk"></td>
+            </tr>
+            <tr>
+                <td>Detials</td>
+                <td id="detials"></td>
+            </tr>
+            <tr>
+                <td>Comments</td>
+                <td id="comments"></td>
+            </tr> 
+        </table>
+    </div>
+
+    <script>
+        var title = getCookieValue("title");
+        document.getElementById("title").innerHTML = title;
+        var firstName = getCookieValue("firstName");
+        document.getElementById("firstName").innerHTML = firstName;
+        var lastName = getCookieValue("lastName");
+        document.getElementById("lastName").innerHTML = lastName;
+        var emailId = getCookieValue("emailId");
+        document.getElementById("emailId").innerHTML = emailId;
+        var phoneNumber = getCookieValue("phoneNumber");
+        document.getElementById("phoneNumber").innerHTML = phoneNumber;
+        var streetAddress1 = getCookieValue("streetAddress1");
+        document.getElementById("streetAddress1").innerHTML = streetAddress1;
+        var streetAddress2 = getCookieValue("streetAddress2");
+        document.getElementById("streetAddress2").innerHTML = streetAddress2;
+        var city = getCookieValue("city");
+        document.getElementById("city").innerHTML = city;
+        var state = getCookieValue("state");
+        document.getElementById("state").innerHTML = state;
+        var zipcode = getCookieValue("zipcode");
+        document.getElementById("zipcode").innerHTML = zipcode;
+        var comments = getCookieValue("comments");
+        document.getElementById("comments").innerHTML = comments;
+        var sources = getCookieValue("sources");
+        document.getElementById("sources").innerHTML = sources.substr(0,sources.length-1);
+        var skills = getCookieValue("skills");
+        document.getElementById("skills").innerHTML = skills;
+        var skillsk = getCookieValue("skillsk");
+        document.getElementById("skillsk").innerHTML = skillsk.substr(0,skillsk.length-1);
+        var detials = getCookieValue("detials");
+        document.getElementById("detials").innerHTML = detials;
+        // var lastName = getCookieValue("lastName");
+        // document.getElementById("lastName").innerHTML = lastName;
+        // var lastName = getCookieValue("lastName");
+        // document.getElementById("lastName").innerHTML = lastName;
+
+    </script>
+</body>
+</html>

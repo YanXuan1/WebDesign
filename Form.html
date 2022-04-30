@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+  <script language="JavaScript" type="text/JavaScript" src="CookieFunctions.js"></script>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form id="person" novalidate>
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" required="required" onclick="test1()"/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required="required" onclick="test1()"/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required="required" onclick="test1()"/>Mrs.
+			<br><br>
+			<div id="errorMsgTitle" style="display: none; color: red;">
+                Please choose at least one identity.
+                <br/><br/>
+            </div>
+
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name" required="required" onblur="validateInputs(this,1,'FName')"/>	
+			<br><br>
+			<div id="errorMsgFName" style="display: none; color: red;">
+                Invalid input for the First Name. Only Letters are allowed.
+                <br/><br/>
+            </div>
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name" required="required" onblur="validateInputs(this,1,'LName')"/>
+			<br><br>
+			<div id="errorMsgLName" style="display: none; color: red;">
+                Invalid input for the Last Name. Only Letters are allowed.
+                <br/><br/>
+            </div>
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required" onblur="validateInputs(this,2)"/>
+			<br><br>
+			<div id="errorMsgEmailId" style="display: none; color: red;">
+                Invalid input for the Email filed. Enter correct Email ends with @northeastern.edu.
+                <br/><br/>
+            </div>
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required" onblur="validateInputs(this,3)"/>
+			<br><br>
+			<div id="errorMsgPhone" style="display: none; color: red;">
+                Invalid input for the Phone number. Enter correct Phone number.
+                <br/><br/>
+            </div>
+
+			<label for="streetAddress1">Street Address 1*:</label>
+			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" required="required" onblur="validateInputs(this,4)"/>
+			<br><br>
+			<div id="errorMsgStreet" style="display: none; color: red;">
+                Invalid input for the Street Address. Enter at least two words with Apt number.
+                <br/><br/>
+            </div>
+
+			<label for="streetAddress2">Street Address 2:</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+			<br><br>
+
+			<label for="city">City*:</label>
+			<input type="text" name="city" id="city" placeholder="city" required="required" onblur="validateInputs(this,5)"/>
+			<br><br>
+			<div id="errorMsgCity" style="display: none; color: red;">
+                Invalid input for the City name.
+                <br/><br/>
+            </div>
+
+			<label for="state">State*:</label>
+			<input type="text" name="state" id="state" placeholder="state" required="required" onblur="validateInputs(this,6)"/>
+			<br><br>
+			<div id="errorMsgState" style="display: none; color: red;">
+                Invalid input for the State abbreviation.
+                <br/><br/>
+            </div>
+			
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxx" required="required" onblur="validateInputs(this,7)"/>
+			<br><br>
+			<div id="errorMsgZip" style="display: none; color: red;">
+                Invalid input for the Zip code. Enter five numbers.
+                <br/><br/>
+            </div>
+             
+            <label for="source">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" onclick="test2()"/> Facebook
+            <input type='checkbox' name="source" value="google" onclick="test2()"/> Google
+            <input type='checkbox' name="source" value="yelp" onclick="test2()"/> Yelp 
+			<br><br> 
+			<div id="errorMsgFrom" style="display: none; color: red;">
+                Invalid choose at least one source.
+                <br/><br/>
+            </div>
+
+			<label for="skills">Choose your skills:</label>
+			<select name="skills" id="skills" onclick="test3()">
+				<option value="nochoice" onclick="test4()">nochoice</option>
+				<option value="study">study</option>
+				<option value="arts">arts</option>
+				<option value="music">music</option>
+				<option value="sports">sports</option>
+				<option value="life">life</option>
+			</select>
+			<br><br>
+			<!-- <div id="skills0" onclick="test4()">
+			    
+			</div> -->
+			<div id="skills1">
+				<label for="skills1">Choose:</label>
+				<input type='checkbox' name="skills1" value="math" onclick="test4()"/> Math
+                <input type='checkbox' name="skills1" value="history" onclick="test4()"/> History
+                <input type='checkbox' name="skills1" value="computer" onclick="test4()"/> ComputerScience 
+				<input type='checkbox' name="skills1" value="English" onclick="test4()"/> English 
+			    <br><br> 
+			</div>
+			<div id="skills2">
+				<label for="skills2">Choose:</label>
+				<input type='checkbox' name="skills2" value="writing" onclick="test4()"/> Writing
+                <input type='checkbox' name="skills2" value="painting" onclick="test4()"/> Painting
+                <input type='checkbox' name="skills2" value="dance" onclick="test4()"/> Dancing
+				<input type='checkbox' name="skills2" value="design" onclick="test4()"/> Designing
+			    <br><br> 
+			</div>
+			<div id="skills3">
+				<label for="skills3">Choose:</label>
+				<input type='checkbox' name="skills3" value="kpop" onclick="test4()"/> KPOP
+                <input type='checkbox' name="skills3" value="classic" onclick="test4()"/> Classic
+                <input type='checkbox' name="skills3" value="countryside" onclick="test4()"/> Countryside 
+			    <br><br> 
+			</div>
+			<div id="skills4">
+				<label for="skills4">Choose:</label>
+				<input type='checkbox' name="skills4" value="yoga" onclick="test4()"/> yoga
+                <input type='checkbox' name="skills4" value="hiking" onclick="test4()"/> hiking
+                <input type='checkbox' name="skills4" value="swimming" onclick="test4()"/> swimming 
+				<input type='checkbox' name="skills4" value="basketball" onclick="test4()"/> basketball 
+			    <br><br> 
+			</div>
+			<div id="skills5">
+				<label for="skills5">Choose:</label>
+				<input type='checkbox' name="skills5" value="cooking" onclick="test4()"/> cooking
+                <input type='checkbox' name="skills5" value="gardening" onclick="test4()"/> gardening
+                <input type='checkbox' name="skills5" value="driving" onclick="test4()"/> driving 
+			    <br><br> 
+			</div>
+
+			<div id="detials1">
+				<label for="detials">Detials*:</label>
+				<textarea name="text" id="detials" placeholder="Detials:" rows="5" cols="25" required="required" onblur="validateInputs(this,9)"></textarea>
+			    <br><br>
+			</div>
+
+			<div id="errorMsgSkills" style="display: none; color: red;">
+                Please write detials of your skills and only Letters allowed.
+                <br/><br/>
+            </div>
+             
+			<label for="comments">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required="required" onblur="validateInputs(this,8)"></textarea>
+			<br><br>
+			<div id="errorMsgComments" style="display: none; color: red;">
+                Please input your comments.
+                <br/><br/>
+            </div>
+
+			<input type="button" onclick="submitted()" value="Submit">	
+			<input type="Reset" value="Reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+
+ <script>
+	// function submitted(){
+	// 	alert("Data saved successfully");
+	// 	window.location.href="/feedbackcomplete.html";
+
+	// }
+	
+	function validateInputs(object,type,nameType){
+		var regExName = /^[a-zA-Z]+$/;
+		var regExEmail = /([\w\.]+)@northeastern.edu/;
+		var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
+		var regExZip = /^\d{5}$/;
+		var regExState = /^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$/;
+		var regExCity = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+		var regExStreet = /\w+(\s\w+){2,}/;
+
+		var name = "errorMsg" + nameType;
+		
+		switch (type) {
+			case 1:
+				if (!object.value.trim().match(regExName)) {
+					object.style.border = "2px solid red";
+					document.getElementById(name).style.display = "block";
+					object.value = "";					
+				} else {
+					object.style.border = "";
+					document.getElementById(name).style.display = "none";
+				}
+				break;
+			case 2:
+				if (!object.value.match(regExEmail)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgEmailId").style.display ="block";
+					object.value = "";
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgEmailId").style.display = "none";
+				}
+				break;
+			case 3:
+				if (!object.value.match(regExPhone)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgPhone").style.display = "block";
+					object.value = "";		
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgPhone").style.display = "none";		
+				}
+				break;
+			case 4:
+				if (!object.value.match(regExStreet)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgStreet").style.display = "block";
+					object.value = "";	
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgStreet").style.display = "none";	
+				}
+				break;
+			case 5:
+				if (!object.value.match(regExCity)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgCity").style.display = "block";
+					object.value = "";	
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgCity").style.display = "none";	
+				}
+				break;
+			case 6:
+				if (!object.value.match(regExState)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgState").style.display = "block";
+					object.value = "";		
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgState").style.display = "none";	
+				}
+				break;
+			case 7:
+				if (!object.value.match(regExZip)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgZip").style.display = "block";
+					object.value = "";	
+				} else {
+					object.style.border = "";
+					document.getElementById("errorMsgZip").style.display = "none";	
+				}
+				break;
+			case 8:
+				if(object.value == ''){
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgComments").style.display ="block";	
+				}else{
+					object.style.border = "";
+					document.getElementById("errorMsgComments").style.display ="none";	
+				}
+				break;
+			case 9:
+				if(object.value == '' || !object.value.match(regExName)){
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgSkills").style.display ="block";	
+				}else{
+					object.style.border = "";
+					document.getElementById("errorMsgSkills").style.display ="none";	
+				}
+				break;
+		}
+	}
+
+	function ifJump(){
+		var titles = document.getElementsByName("title");
+		var count = 0;
+		for (var i = 0; i < titles.length; i++) {
+			if (titles[i].checked) {
+					count = count + 1;
+			}
+		}
+		if(count == 0){
+			document.getElementById("errorMsgTitle").style.display ="block";
+		}else{
+			document.getElementById("errorMsgTitle").style.display ="none";
+		}
+
+		var sources = document.getElementsByName("source");
+		var count2 = 0;
+		for (var i = 0; i < sources.length; i++) {
+			if (sources[i].checked) {
+				count2 = count2 + 1;
+			}
+		}
+		if(count2 == 0){
+			document.getElementById("errorMsgFrom").style.display ="block";
+		}else{
+			document.getElementById("errorMsgFrom").style.display ="none";
+		}
+
+		var target = document.getElementById("skills").value;
+		
+		if(target == 'study'){
+			var skills = document.getElementsByName("skills1");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'arts'){
+			var skills = document.getElementsByName("skills2");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'music'){
+			var skills = document.getElementsByName("skills3");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'sports'){
+			var skills = document.getElementsByName("skills4");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'life'){
+			var skills = document.getElementsByName("skills5");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'nochoice'){
+			document.getElementById("errorMsgSkills").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+		}
+
+		if(count == 0 || count2 == 0 || (target != 'nochoice' && k != 0 && document.getElementById("detials").value == '') || document.getElementById("firstName").value == '' || document.getElementById("lastName").value == '' || document.getElementById("emailId").value == "" || document.getElementById("phoneNumber").value == "" || document.getElementById("streetAddress1").value == "" || document.getElementById("city").value == "" || document.getElementById("state").value == "" || document.getElementById("zipcode").value == "" || document.getElementById("comments").value == ""){
+			if(document.getElementById("firstName").value == ''){
+				document.getElementById("firstName").style.border = "2px solid red";
+				document.getElementById("firstName").value = "";
+				document.getElementById("errorMsgFName").style.display ="block";
+			}
+			if(document.getElementById("lastName").value == ''){
+				document.getElementById("lastName").style.border = "2px solid red";
+				document.getElementById("lastName").value = "";
+				document.getElementById("errorMsgLName").style.display ="block";
+			}
+			if(document.getElementById("emailId").value == ""){
+				document.getElementById("emailId").style.border = "2px solid red";
+				document.getElementById("emailId").value = "";
+				document.getElementById("errorMsgEmailId").style.display ="block";
+			}
+			if(document.getElementById("phoneNumber").value == ""){
+				document.getElementById("phoneNumber").style.border = "2px solid red";
+				document.getElementById("phoneNumber").value = "";
+				document.getElementById("errorMsgPhone").style.display ="block";
+			}
+			if(document.getElementById("streetAddress1").value == ""){
+				document.getElementById("streetAddress1").style.border = "2px solid red";
+				document.getElementById("streetAddress1").value = "";
+				document.getElementById("errorMsgStreet").style.display ="block";
+			}
+			if(document.getElementById("city").value == ""){
+				document.getElementById("city").style.border = "2px solid red";
+				document.getElementById("city").value = "";
+				document.getElementById("errorMsgCity").style.display ="block";
+			}
+			if(document.getElementById("state").value == ""){
+				document.getElementById("state").style.border = "2px solid red";
+				document.getElementById("state").value = "";
+				document.getElementById("errorMsgState").style.display ="block";
+			}
+			if(document.getElementById("zipcode").value == ""){
+				document.getElementById("zipcode").style.border = "2px solid red";
+				document.getElementById("zipcode").value = "";
+				document.getElementById("errorMsgZip").style.display ="block";
+			}
+			if(document.getElementById("comments").value == ""){
+				document.getElementById("comments").style.border = "2px solid red";
+				document.getElementById("comments").value = "";
+				document.getElementById("errorMsgComments").style.display ="block";
+			}
+			if(target != 'nochoice' && k != 0 && document.getElementById("detials").value == ''){
+				document.getElementById("detials").style.border = "2px solid red";
+				document.getElementById("detials").value = "";
+				document.getElementById("errorMsgSkills").style.display ="block";
+			}
+			return false;
+		}else{
+			
+			return true;
+		}
+	}
+
+	function test1(){
+		var titles = document.getElementsByName("title");
+		var count = 0;
+		for (var i = 0; i < titles.length; i++) {
+			if (titles[i].checked) {
+					count = count + 1;
+			}
+		}
+		if(count == 0){
+			document.getElementById("errorMsgTitle").style.display ="block";
+		}else{
+			document.getElementById("errorMsgTitle").style.display ="none";
+		}
+	}
+
+	function test2(){
+		var sources = document.getElementsByName("source");
+		var count2 = 0;
+		for (var i = 0; i < sources.length; i++) {
+			if (sources[i].checked) {
+				count2 = count2 + 1;
+			}
+		}
+		if(count2 == 0){
+			document.getElementById("errorMsgFrom").style.display ="block";
+		}else{
+			document.getElementById("errorMsgFrom").style.display ="none";
+		}
+	}
+
+
+	// document.getElementById("skills0").style.display ="none";
+	document.getElementById("skills1").style.display ="none";
+	document.getElementById("skills2").style.display ="none";
+	document.getElementById("skills3").style.display ="none";
+	document.getElementById("skills4").style.display ="none";
+	document.getElementById("skills5").style.display ="none";
+	document.getElementById("detials1").style.display ="none";
+	document.getElementById("detials").value = "";
+
+	function returncheck(){
+		var skills = document.getElementsByName("skills1");
+		for(var i = 0; i<skills.length;i++){
+			skills[i].checked = false;
+		}
+		var skills2 = document.getElementsByName("skills2");
+		for(var i = 0; i<skills2.length;i++){
+			skills2[i].checked = false;
+		}
+		var skills3 = document.getElementsByName("skills3");
+		for(var i = 0; i<skills3.length;i++){
+			skills3[i].checked = false;
+		}
+		var skills4 = document.getElementsByName("skills4");
+		for(var i = 0; i<skills4.length;i++){
+			skills4[i].checked = false;
+		}
+		var skills5 = document.getElementsByName("skills5");
+		for(var i = 0; i<skills5.length;i++){
+			skills5[i].checked = false;
+		}
+	}
+
+	function test3(){
+		var target = document.getElementById("skills").value;
+		if(target == 'nochoice'){
+			document.getElementById("skills1").style.display ="none";
+			document.getElementById("skills2").style.display ="none";
+			document.getElementById("skills3").style.display ="none";
+			document.getElementById("skills4").style.display ="none";
+			document.getElementById("skills5").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("errorMsgSkills").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+
+		}
+		if(target == 'study'){
+			document.getElementById("skills1").style.display ="block";
+			document.getElementById("skills2").style.display ="none";
+			document.getElementById("skills3").style.display ="none";
+			document.getElementById("skills4").style.display ="none";
+			document.getElementById("skills5").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+		}
+		if(target == 'arts'){
+			document.getElementById("skills1").style.display ="none";
+			document.getElementById("skills2").style.display ="block";
+			document.getElementById("skills3").style.display ="none";
+			document.getElementById("skills4").style.display ="none";
+			document.getElementById("skills5").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+		}
+		if(target == 'music'){
+			document.getElementById("skills1").style.display ="none";
+			document.getElementById("skills2").style.display ="none";
+			document.getElementById("skills3").style.display ="block";
+			document.getElementById("skills4").style.display ="none";
+			document.getElementById("skills5").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+		}
+		if(target == 'sports'){
+			document.getElementById("skills1").style.display ="none";
+			document.getElementById("skills2").style.display ="none";
+			document.getElementById("skills3").style.display ="none";
+			document.getElementById("skills4").style.display ="block";
+			document.getElementById("skills5").style.display ="none";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+		}
+		if(target == 'life'){
+			document.getElementById("skills1").style.display ="none";
+			document.getElementById("skills2").style.display ="none";
+			document.getElementById("skills3").style.display ="none";
+			document.getElementById("skills4").style.display ="none";
+			document.getElementById("skills5").style.display ="block";
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("detials").value = "";
+			returncheck();
+		}
+	}
+
+	function test4(){
+		var target = document.getElementById("skills").value;
+		if(target == 'nochoice'){
+			document.getElementById("detials1").style.display ="none";
+			document.getElementById("errorMsgSkills").style.display ="none";
+		}
+		if(target == 'study'){
+			var skills = document.getElementsByName("skills1");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+			
+		}
+		if(target == 'arts'){
+			var skills = document.getElementsByName("skills2");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'music'){
+			var skills = document.getElementsByName("skills3");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'sports'){
+			var skills = document.getElementsByName("skills4");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		if(target == 'life'){
+			var skills = document.getElementsByName("skills5");
+			var k = 0;
+			for(var i = 0; i<skills.length;i++){
+				if(skills[i].checked){
+					k = k + 1;
+				}
+			}
+			if(k != 0){
+				document.getElementById("detials1").style.display ="block";
+			}else{
+				document.getElementById("detials").value = "";
+				document.getElementById("detials1").style.display ="none";
+			}
+		}
+		
+	}
+
+	// function submitted(){
+	// 	if(ifJump() == True){
+	// 		if(!window.localStorage){
+	// 			alert("Can't support localstorage!");
+	// 		}
+	// 		return false;
+	// 	}else{
+	// 		var storage = window.localStorage;
+	// 		if(document.getElementById("mr").checked){
+	// 			storage["title"] = 'mr';
+	// 		}
+	// 		if(document.getElementById("mrs").checked){
+	// 			storage["title"] = 'mrs';
+	// 		}
+	// 		if(document.getElementById("miss").checked){
+	// 			storage["title"] = 'miss';
+	// 		}
+	// 		storage["firstName"] = document.getElementById("firstName").value;
+	// 		storage["lastName"] = document.getElementById("lastName").value;
+	// 		storage["emailId"] = document.getElementById("emailId").value;
+	// 		storage["phoneNumber"] = document.getElementById("phoneNumber").value;
+	// 		storage["streetAddress1"] = document.getElementById("streetAddress1").value;
+	// 		storage["streetAddress2"] = document.getElementById("streetAddress2").value;
+	// 		storage["city"] = document.getElementById("city").value;
+	// 		storage["state"] = document.getElementById("state").value;
+	// 		storage["zipcode"] = document.getElementById("zipcode").value;
+	// 		storage["comments"] = document.getElementById("comments").value;
+	// 		var sources = document.getElementsByName("source");
+	// 		for (var i = 0; i < sources.length; i++) {
+	// 			if (sources[i].checked) {
+	// 				count2 = count2 + 1;
+	// 			}
+	// 		}
+	// 		storage["streetAddress1"] = document.getElementById("streetAddress1").value;
+	// 	}		
+	// }
+
+	function submitted(){
+		if(ifJump() == true){
+			var title = 0;
+		if(document.getElementById("mr").checked){
+			title = 'mr';
+		}
+		if(document.getElementById("mrs").checked){
+			title = 'mrs';
+		}
+		if(document.getElementById("miss").checked){
+			title = 'miss';
+		}
+		setCookie("title",title,"","");
+
+		var firstName = document.getElementById("firstName").value;
+		setCookie("firstName",firstName,"","");
+
+		var lastName = document.getElementById("lastName").value;
+		setCookie("lastName",lastName,"","");
+
+		var emailId = document.getElementById("emailId").value;
+		setCookie("emailId",emailId,"","");
+
+		var phoneNumber = document.getElementById("phoneNumber").value;
+		setCookie("phoneNumber",phoneNumber,"","");
+
+		var streetAddress1 = document.getElementById("streetAddress1").value;
+		setCookie("streetAddress1",streetAddress1,"","");
+
+		var streetAddress2 = document.getElementById("streetAddress2").value;
+		setCookie("streetAddress2",streetAddress2,"","");
+
+		var city = document.getElementById("city").value;
+		setCookie("city",city,"","");
+
+		var state = document.getElementById("state").value;
+		setCookie("state",state,"","");
+
+		var zipcode = document.getElementById("zipcode").value;
+		setCookie("zipcode",zipcode,"","");
+
+		var comments = document.getElementById("comments").value;
+		setCookie("comments",comments,"","");
+
+		var str1 = '';
+		var sources = document.getElementsByName("source");
+		for (var i = 0; i < sources.length; i++) {
+			if (sources[i].checked) {
+				str1 = str1 + sources[i].value + ',';
+			}
+		}
+		setCookie("sources",str1,"","");
+
+		var skills = '';
+		var skillsk = '';
+		var detials = '';
+		var target = document.getElementById("skills").value;
+		if(target == 'nochoice'){
+			setCookie("skills",skills,"","");
+			setCookie("skillsk",skillsk,"","");
+			setCookie("detials",detials,"","");
+		}else{
+			var skills = target;
+			setCookie("skills",skills,"","");
+			if(target == 'study'){
+				var skills = document.getElementsByName("skills1");
+				var k = '';
+				for(var i = 0; i<skills.length;i++){
+					if(skills[i].checked){
+						k = k + skills[i].value + ',';
+					}
+				}
+				if(k == ''){
+					setCookie("skillsk",skillsk,"","");
+					setCookie("detials",detials,"","");
+				}else{
+					setCookie("skillsk",k,"","");
+					detials = document.getElementById("detials").value;
+					setCookie("detials",detials,"","");
+				}
+			}
+			if(target == 'arts'){
+				var skills = document.getElementsByName("skills2");
+				var k = '';
+				for(var i = 0; i<skills.length;i++){
+					if(skills[i].checked){
+						k = k + skills[i].value + ',';
+					}
+				}
+				if(k == ''){
+					setCookie("skillsk",skillsk,"","");
+					setCookie("detials",detials,"","");
+				}else{
+					setCookie("skillsk",k,"","");
+					detials = document.getElementById("detials").value;
+					setCookie("detials",detials,"","");
+				}
+			}
+			if(target == 'music'){
+				var skills = document.getElementsByName("skills3");
+				var k = '';
+				for(var i = 0; i<skills.length;i++){
+					if(skills[i].checked){
+						k = k + skills[i].value + ',';
+					}
+				}
+				if(k == ''){
+					setCookie("skillsk",skillsk,"","");
+					setCookie("detials",detials,"","");
+				}else{
+					setCookie("skillsk",k,"","");
+					detials = document.getElementById("detials").value;
+					setCookie("detials",detials,"","");
+				}
+			}
+			if(target == 'sports'){
+				var skills = document.getElementsByName("skills4");
+				var k = '';
+				for(var i = 0; i<skills.length;i++){
+					if(skills[i].checked){
+						k = k + skills[i].value + ',';
+					}
+				}
+				if(k == ''){
+					setCookie("skillsk",skillsk,"","");
+					setCookie("detials",detials,"","");
+				}else{
+					setCookie("skillsk",k,"","");
+					detials = document.getElementById("detials").value;
+					setCookie("detials",detials,"","");
+				}
+			}
+			if(target == 'life'){
+				var skills = document.getElementsByName("skills5");
+				var k = '';
+				for(var i = 0; i<skills.length;i++){
+					if(skills[i].checked){
+						k = k + skills[i].value + ',';
+					}
+				}
+				if(k == ''){
+					setCookie("skillsk",skillsk,"","");
+					setCookie("detials",detials,"","");
+				}else{
+					setCookie("skillsk",k,"","");
+					detials = document.getElementById("detials").value;
+					setCookie("detials",detials,"","");
+				}
+			}
+		}
+		window.location.href="Table.html"; 
+		document.getElementById("person").reset();
+		}
+
+		
+		}
+</script>
+
+ </body>
+</html>
