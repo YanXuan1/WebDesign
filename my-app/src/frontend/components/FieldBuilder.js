@@ -16,9 +16,9 @@ class FieldBuilder extends React.Component {
     }
     label = this.state.label;
     required = this.state.required;
-    defaultValue = this.state.choices[0];
-    default = this.state.default;
-    choices2 = this.state.choices;
+    default = this.state.choices[0];
+    // default = this.state.default;
+    choices = this.state.choices;
   
     // createTable(){
     //     console.log(this.choices2);
@@ -39,12 +39,33 @@ class FieldBuilder extends React.Component {
     // }
 
     inputChange(e){
-        let val = e.state;
-        console.log(val);
+        let val = e.nativeEvent.path[2].childNodes[0].innerText;
+        document.getElementById("default").value=val;
         this.setState(()=>{
             this.state.default = val;
         });
         
+    }
+
+
+    remove(val){
+        var index = this.choices.indexOf(val);
+        console.log(index);
+        if(index > -1){
+            this.choices.splice(index,1);
+        }
+        
+    }
+
+    deleteChange(e){
+        let val = e.nativeEvent.path[2].childNodes[0].innerText;  
+        this.remove(val);
+        console.log(this.choices);
+        document.getElementById("myTableBody").tbody = this.choices;
+        this.setState(()=>{
+            this.state.choices = this.choices;
+        });
+        console.log(this.choices);
     }
     
     render(){
@@ -62,14 +83,14 @@ class FieldBuilder extends React.Component {
            <input id="default" value={this.default}></input><br/>
            <label>Choices</label> <br/> 
            <table className='myTable'>
-               <tbody className='myTableBody'>
+               <tbody id='myTableBody'>
            {
                     this.state.choices.map((item,key)=>{
                         return(
                             <tr>
                             <th>{item}</th>
                             <td><button type='button' onClick={this.inputChange.bind(this)}>Choose</button></td>
-                            <td><button type='button'>Delete</button></td>
+                            <td><button type='button' onClick={this.deleteChange.bind(this)}>Delete</button></td>
                             </tr>
                         )
                     })
