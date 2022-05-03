@@ -58,10 +58,15 @@ class FieldBuilder extends React.Component {
     }
 
     deleteChange(e){
-        let val = e.nativeEvent.path[2].childNodes[0].innerText;  
+        let val = e.nativeEvent.path[2].childNodes[0].innerText;
         this.remove(val);
-        console.log(this.choices);
-        document.getElementById("myTableBody").tbody = this.choices;
+        let str="";
+            this.state.choices.map((item,key)=>{
+                str += "<tr><th>"+item + "</th><td><button type=\"button\" onclick=\"{this.inputChange.bind(this)}\">Choose</button></td><td><button type=\"button\" onclick=\"{this.deleteChange.bind(this)}\">Delete</button></td></tr>"
+                
+            })
+        
+        document.getElementById("myTableBody").innerHTML = str;
         this.setState(()=>{
             this.state.choices = this.choices;
         });
@@ -75,16 +80,16 @@ class FieldBuilder extends React.Component {
                
             <form>
             <label>Label</label> 
-           <input id="label" value={this.label}></input><br/>
+           <input id="label" defaultValue={this.label}></input><br/>
             <label>Type</label>
             <label>Multi-select</label> 
-            <label><input type="checkbox" name="multi-select" value="true" checked={this.required}/>A Value is required</label><br/>
+            <label><input type="checkbox" name="multi-select" value="true" defaultChecked={this.required}/>A Value is required</label><br/>
             <label>Default Value</label> 
-           <input id="default" value={this.default}></input><br/>
+           <input id="default" defaultValue={this.default}></input><br/>
            <label>Choices</label> <br/> 
            <table className='myTable'>
                <tbody id='myTableBody'>
-           {
+                {
                     this.state.choices.map((item,key)=>{
                         return(
                             <tr>
