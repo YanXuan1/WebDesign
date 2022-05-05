@@ -16,17 +16,19 @@ function FieldBuilder(props){
         value : state.choices[0]
     });
     const [choice,setChoices] =useState(state.choices);
-    // console.log(choice);
+    const [order,setOrder] = useState("Increase");
 
+    // console.log(choice);
     function inputChangeHanlder(val){
-        console.log(val);
         updateData(prev=>{
             return {
                 ...prev,
                 defaultValue: val
             }
         });
+        
     }
+    
 
 
     function removeHanlder(val){
@@ -39,15 +41,15 @@ function FieldBuilder(props){
         )
     }
 
-    // function stateChangeHandler2(event){
-    //     const {name,value} = event.target;
-    //     updateData(prev=>{
-    //         return {
-    //             ...prev,
-    //             [name]: value
-    //         }
-    //     });
-    // }
+    function stateChangeHandler2(event){
+        const {name,value} = event.target;
+        updateData(prev=>{
+            return {
+                ...prev,
+                [name]: value
+            }
+        });
+    }
 
     //Validations
     function isRequired(value){
@@ -68,9 +70,10 @@ function FieldBuilder(props){
         ({defaultValueForMsg}) => isRequired(defaultValueForMsg) || {defaultValueForMsg:'Default value is required'}
     ];
 
-    const {values,errors,isValid,touched,stateChangeHandler,submitHandler} = useForm(initialState,validations,props);
+   
+    const {values,errors,isValid,touched,stateChangeHandler,submitHandler} = useForm(initialState,validations,props,props);
 
-
+    console.log(values.defaultValueForMsg);
     //HandelExtraLength
     const inputEl = useRef(null);
 
@@ -82,9 +85,9 @@ function FieldBuilder(props){
 
 
     //get Increase or Decrease
-    const [order,setOrder] = useState("Increase");
-    function sorts(){
-        setChoices(choice.sort((a,b) => {
+    function sorts(event){
+        var currentChoice = choice;
+        currentChoice.sort((a,b) => {
             if(a<b){
                 return order === "Increase" ? -1 : 1;
             }
@@ -92,8 +95,10 @@ function FieldBuilder(props){
                 return order === "Decrease" ? -1 : 1;
             }
             return 0;
-        }));
-        console.log(choice);
+        });
+        setChoices([...currentChoice]);
+        event.preventDefault();
+
     }
     
     // console.log(order);
@@ -114,7 +119,7 @@ function FieldBuilder(props){
                 <label>Multi-select</label> 
                 <label id="check"><input type="checkbox" name="multi-select" value="true" defaultChecked={data.required}/>A Value is required</label><br/>
                 <label id='defaultValue'>DefaultValue</label> 
-                <input type="defaultValue" name="defaultValueForMsg" defaultValue = {data.defaultValue} onChange={stateChangeHandler} required></input><br/>
+                <input type="defaultValue" name="defaultValue" value={data.defaultValue} onChange={stateChangeHandler2} required></input><br/>
                 {
                     touched.defaultValueForMsg && errors.defaultValueForMsg && <p className="error" style={{color: 'red'}}>{errors.defaultValueForMsg}</p>
                 }
