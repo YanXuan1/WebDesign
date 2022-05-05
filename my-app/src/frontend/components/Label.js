@@ -1,7 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-class Label extends React.Component{
+function Label(props){
 
+    return(
+        <input id="label" type="text"></input>
+    );
 }
 
 export default Label;
