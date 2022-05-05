@@ -40,6 +40,8 @@ function FieldBuilder(props){
         )
     }
 
+    const[validDefault,setValidDefault] = useState(false);
+    const[validDefault2,setValidDefault2] = useState(false);
     function stateChangeHandler2(event){
         const {name,value} = event.target;
         updateData(prev=>{
@@ -48,6 +50,29 @@ function FieldBuilder(props){
                 [name]: value
             }
         });
+        if(value.length > 40){
+            setValidDefault(true);
+        }else{
+            setValidDefault(false);
+        }
+        if(value.length === 0){
+            setValidDefault2(true);
+        }else{
+            setValidDefault2(false);
+        }
+    }
+
+    
+
+    function setCheckbox(event){
+        var isChecked = event.target.checked;
+            updateData(prev=>{
+                return {
+                    ...prev,
+                    required: isChecked
+                }
+            });
+        
     }
 
     //Validations
@@ -72,7 +97,8 @@ function FieldBuilder(props){
    
     const {values,errors,isValid,touched,stateChangeHandler,submitHandler} = useForm(initialState,validations,props,props);
 
-    // console.log(values.defaultValueForMsg);
+    
+
     //HandelExtraLength
     const inputEl = useRef(null);
 
@@ -97,20 +123,67 @@ function FieldBuilder(props){
         });
         setChoices([...currentChoice]);
         event.preventDefault();
-
     }
     
     // Return origin values
     function refresh(){
         window.location.reload(false);
     }
+
+    //Submit
+    const[validLength,setValidLength] = useState(true);
+    const[validResult,setValidResult] = useState(true);
+    function submit(event){
+        event.preventDefault();
+        var flag = false;
+        for(var i = 0;i<choice.length;i++){
+            if(choice[i] !== data.defaultValue){
+                flag = true;
+                break;
+            }
+        }
+        if(flag){
+            setChoices([...choice,data.defaultValue]);
+        }
+        if(choice.length > 50){
+            setValidLength(false);
+        }else{
+            setValidLength(true);
+        }
+        if(!validDefault && !validDefault2 && validLength && isValid){
+            setValidResult(true);
+            const res = {
+                label: values.labelForMsg,
+                type: data.required,
+                DefaultValue: data.defaultValue
+            };
+            console.log(res);
+            fetch("http://www.mocky.io/v2/566061f21200008e3aabd919", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(res),
+            }).then(response => response.json())
+            .then(data =>{
+                console.log("data: " + data.status);
+            });
+        }else{
+            setValidResult(false);
+        }
+        
+
+    }
+
+
     
 
     
     return (
         <div className='fieldBuilder'>
             <h1>Field Builder</h1>
-            <form onSubmit={submitHandler}>
+            <form>
                 <label id='label'>Label</label>
                 <input type="label" name="labelForMsg" defaultValue={data.label} ref={inputEl} onChange={stateChangeHandler} required></input>
                 <button id="focus" type="button" onClick={maxLength}>The extra length</button><br/>
@@ -119,11 +192,14 @@ function FieldBuilder(props){
                 }
                 <label id='type'>Type</label>
                 <label>Multi-select</label> 
-                <label id="check"><input type="checkbox" name="multi-select" value="true" defaultChecked={data.required}/>A Value is required</label><br/>
+                <label id="check"><input type="checkbox" name="multi-select" defaultChecked={data.required} onClick={setCheckbox}/>A Value is required</label><br/>
                 <label id='defaultValue'>DefaultValue</label> 
                 <input type="defaultValue" name="defaultValue" value={data.defaultValue} onChange={stateChangeHandler2} required></input><br/>
                 {
-                    touched.defaultValueForMsg && errors.defaultValueForMsg && <p className="error" style={{color: 'red'}}>{errors.defaultValueForMsg}</p>
+                    validDefault && <p className="error" style={{color: 'red'}}>{"Should not more than 40 characters"}</p>
+                }
+                {
+                    validDefault2 && <p className="error" style={{color: 'red'}}>{"Should not be null"}</p>
                 }
                 <label id='choices'>Choices</label>
                 <div className="tableDiv">
@@ -146,8 +222,11 @@ function FieldBuilder(props){
                     <option value="Decrease" >Decrease Order</option>
                 </select>
                 <button id="sure" type='button' onClick={sorts}>Sure</button><br/>
-                <button id="submit" type="button" >Save</button>&nbsp;&nbsp;&nbsp;Or &nbsp;
+                <button id="submit" type="button" onClick={submit} >Save</button>&nbsp;&nbsp;&nbsp;Or &nbsp;
                 <button id="cancel" type="button" onClick={refresh}>Cancel</button> 
+                {
+                    !validResult && <p className="error" style={{color: 'red'}}>{"Cannot submit for some errors"}</p>
+                }
             </form> 
         </div>
        
