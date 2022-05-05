@@ -13,7 +13,6 @@ function FieldBuilder(props){
         label: state.label,
         required : state.required,
         defaultValue : state.choices[0],
-        value : state.choices[0]
     });
     const [choice,setChoices] =useState(state.choices);
     const [order,setOrder] = useState("Increase");
@@ -73,7 +72,7 @@ function FieldBuilder(props){
    
     const {values,errors,isValid,touched,stateChangeHandler,submitHandler} = useForm(initialState,validations,props,props);
 
-    console.log(values.defaultValueForMsg);
+    // console.log(values.defaultValueForMsg);
     //HandelExtraLength
     const inputEl = useRef(null);
 
@@ -101,7 +100,10 @@ function FieldBuilder(props){
 
     }
     
-    // console.log(order);
+    // Return origin values
+    function refresh(){
+        window.location.reload(false);
+    }
     
 
     
@@ -145,7 +147,7 @@ function FieldBuilder(props){
                 </select>
                 <button id="sure" type='button' onClick={sorts}>Sure</button><br/>
                 <button id="submit" type="button" >Save</button>&nbsp;&nbsp;&nbsp;Or &nbsp;
-                <button id="cancel" type="button" >Cancel</button> 
+                <button id="cancel" type="button" onClick={refresh}>Cancel</button> 
             </form> 
         </div>
        

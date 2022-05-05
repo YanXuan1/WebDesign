@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 import validate from "./validateRules";
 
-function useForm(initialState={},validations=[],onSubmit=()=>{},updateData=()=>{}){
+function useForm(initialState={},validations=[],onSubmit=()=>{}){
     const{isValid:initialIsValid,errors:initialErrors} = validate(validations,initialState);
     const[errors,setErrors] = useState(initialErrors);
     const[values,setValues] = useState(initialState);
@@ -14,13 +14,6 @@ function useForm(initialState={},validations=[],onSubmit=()=>{},updateData=()=>{
             ...values,
             [event.target.name] : event.target.value
         };
-        // updateData(prev=>{
-        //     return{
-        //         ...prev,
-        //         [event.target.name] : event.target.value  
-        //     }
-
-        // })
         const{isValid,errors} = validate(validations,newValues);
         setValues(newValues);
         setIsValid(isValid);
