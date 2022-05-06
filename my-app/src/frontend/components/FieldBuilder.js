@@ -138,6 +138,14 @@ function FieldBuilder(props){
     
     // Return origin values
     function refresh(){
+        updateData(prev=>{
+            return {
+                ...prev,
+                label:  state.label,
+                required : state.required,
+                defaultValue : state.choices[0],
+            }
+        }); 
         window.location.reload(false);
     }
 
