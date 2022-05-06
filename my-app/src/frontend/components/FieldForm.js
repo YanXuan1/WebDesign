@@ -9,7 +9,7 @@ function useForm(initialState={},validations=[],onSubmit=()=>{}){
     const[touched,setTouched] = useState({});
 
     const stateChangeHandler= event =>{
-        console.log(event.target.name+": "+ event.target.value);
+        // console.log(event.target.name+": "+ event.target.value);
         const newValues = {
             ...values,
             [event.target.name] : event.target.value

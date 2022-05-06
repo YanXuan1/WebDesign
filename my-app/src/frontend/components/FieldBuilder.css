@@ -2,7 +2,7 @@
     border: 1px solid rgb(143, 210, 248);
     border-radius: 10px;
     width: 600px;
-    height: 600px;
+    height: 700px;
     margin-left: 30%;
     margin-top: 3%;
     text-align: left;
@@ -92,7 +92,7 @@
         border: 1px solid rgb(143, 210, 248);
         border-radius: 10px;
         width: 600px;
-        height: 600px;
+        height: 700px;
         margin-left: 13%;
         margin-top: 3%;
         text-align: left;
@@ -105,7 +105,7 @@
         border: 1px solid rgb(143, 210, 248);
         border-radius: 10px;
         width: 360px;
-        height: 700px;
+        height: 800px;
         margin-left: 2%;
         margin-top: 3%;
         text-align: left;
@@ -161,9 +161,9 @@
         border: 1px solid rgb(143, 210, 248);
         border-radius: 10px;
         width: 600px;
-        height: 600px;
+        height: 700px;
         margin-left: 30%;
-        margin-top: 3%;
+        margin-top: 1%;
         text-align: left;
         /* border: 2px solid red; */
     }

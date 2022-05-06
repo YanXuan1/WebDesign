@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function FieldBuilder(props){
 
     const state = FieldService.getField(0);
-    
     const [data, updateData] = useState({
         label: state.label,
         required : state.required,
@@ -16,6 +15,8 @@ function FieldBuilder(props){
     });
     const [choice,setChoices] =useState(state.choices);
     const [order,setOrder] = useState("Increase");
+    const[validDefault,setValidDefault] = useState(false);
+    const[validDefault2,setValidDefault2] = useState(false);
 
     // console.log(choice);
     function inputChangeHanlder(val){
@@ -25,7 +26,7 @@ function FieldBuilder(props){
                 defaultValue: val
             }
         });
-        
+        setValidDefault2(false);
     }
     
 
@@ -40,8 +41,7 @@ function FieldBuilder(props){
         )
     }
 
-    const[validDefault,setValidDefault] = useState(false);
-    const[validDefault2,setValidDefault2] = useState(false);
+    
     function stateChangeHandler2(event){
         const {name,value} = event.target;
         updateData(prev=>{
@@ -66,13 +66,12 @@ function FieldBuilder(props){
 
     function setCheckbox(event){
         var isChecked = event.target.checked;
-            updateData(prev=>{
-                return {
-                    ...prev,
-                    required: isChecked
-                }
-            });
-        
+        updateData(prev=>{
+            return {
+                ...prev,
+                 required: isChecked
+            }
+        }); 
     }
 
     //Validations
@@ -137,12 +136,12 @@ function FieldBuilder(props){
         event.preventDefault();
         var flag = false;
         for(var i = 0;i<choice.length;i++){
-            if(choice[i] !== data.defaultValue){
+            if(choice[i] === data.defaultValue){
                 flag = true;
                 break;
             }
         }
-        if(flag){
+        if(!flag && data.defaultValue.length !== 0){
             setChoices([...choice,data.defaultValue]);
         }
         if(choice.length > 50){
