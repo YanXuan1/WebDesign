@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './FieldBuilder.css';
 import FieldService from '../../apis/MockService';
 import Items from "./Items";
+import Button from "./Button";
 import useForm from "./FieldForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -94,7 +95,7 @@ function FieldBuilder(props){
     ];
 
    
-    const {values,errors,isValid,touched,stateChangeHandler,submitHandler} = useForm(initialState,validations,props,props);
+    const {values,errors,isValid,touched,stateChangeHandler} = useForm(initialState,validations);
 
     
 
@@ -121,7 +122,7 @@ function FieldBuilder(props){
             return 0;
         });
         setChoices([...currentChoice]);
-        event.preventDefault();
+        // event.preventDefault();
     }
     
     // Return origin values
@@ -220,7 +221,8 @@ function FieldBuilder(props){
                     <option value="Increase" >Increase Order</option> 
                     <option value="Decrease" >Decrease Order</option>
                 </select>
-                <button id="sure" type='button' onClick={sorts}>Sure</button><br/>
+                {/* <button id="sure" type='button' onClick={sorts}>Sure</button><br/> */}
+                <Button sort={sorts}>Sure</Button><br/>
                 <button id="submit" type="button" onClick={submit} >Save</button>&nbsp;&nbsp;&nbsp;Or &nbsp;
                 <button id="cancel" type="button" onClick={refresh}>Cancel</button> 
                 {

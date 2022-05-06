@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 import validate from "./validateRules";
 
-function useForm(initialState={},validations=[],onSubmit=()=>{}){
+function useForm(initialState={},validations=[]){
     const{isValid:initialIsValid,errors:initialErrors} = validate(validations,initialState);
     const[errors,setErrors] = useState(initialErrors);
     const[values,setValues] = useState(initialState);
@@ -21,12 +21,8 @@ function useForm(initialState={},validations=[],onSubmit=()=>{}){
         setTouched({...touched,[event.target.name]:true});
     }
 
-    const submitHandler = event => {
-        event.preventDefault();
-        onSubmit(values);
-    }
 
-    return {values,errors,isValid,touched,stateChangeHandler,submitHandler};
+    return {values,errors,isValid,touched,stateChangeHandler};
 };
 
 export default useForm;
