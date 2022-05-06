@@ -40,8 +40,7 @@ function FieldBuilder(props){
         setValidDefault2(false);
     }
     
-
-
+    const[validLength,setValidLength] = useState(true);
     function removeHanlder(val){
         setChoices(
             prev=>{
@@ -50,6 +49,8 @@ function FieldBuilder(props){
                 })
             }
         )
+        console.log(choice.length);
+        setValidLength(choice.length > 50 ? false : true);
     }
 
     
@@ -142,7 +143,6 @@ function FieldBuilder(props){
 
 
     //Submit
-    const[validLength,setValidLength] = useState(true);
     const[validResult,setValidResult] = useState(true);
     function submit(event){
         event.preventDefault();
@@ -153,7 +153,7 @@ function FieldBuilder(props){
                 break;
             }
         }
-        if(choice.length > 50){
+        if(!validLength || choice.length > 50 || (!flag && choice.length===50)){
             setValidLength(false);
         }else{
             setValidLength(true);
@@ -227,6 +227,9 @@ function FieldBuilder(props){
                 </table>
                 </div>
                 <br/>
+                {
+                    !validLength && <p className="error" style={{color: 'red'}}>{"There should no more than 50 choices"}</p>
+                }
                 <label id='order'>Order</label>
                 <select onChange={(e) => setOrder(e.target.value)}>
                     <option value="Increase" >Increase Order</option> 

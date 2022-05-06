@@ -8,7 +8,7 @@ function Button(props){
         event.preventDefault();
     }
     return(
-        <button id="sure" type='button' onClick={sorts}>Submit</button>
+        <button id="sure" type='button' onClick={sorts}>Sure</button>
     );
 };
 
