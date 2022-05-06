@@ -4,16 +4,26 @@ import FieldService from '../../apis/MockService';
 import Items from "./Items";
 import Button from "./Button";
 import useForm from "./FieldForm";
+import useLocalStorage from "./useLocalStorage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function FieldBuilder(props){
 
     const state = FieldService.getField(0);
-    const [data, updateData] = useState({
-        label: state.label,
+
+    // const [data, updateData] = useState({
+    //     label:  state.label,
+    //     required : state.required,
+    //     defaultValue : state.choices[0],
+    // });
+
+    const [data, updateData] = useLocalStorage("data",{
+        label:  state.label,
         required : state.required,
         defaultValue : state.choices[0],
     });
+
+    
     const [choice,setChoices] =useState(state.choices);
     const [order,setOrder] = useState("Increase");
     const[validDefault,setValidDefault] = useState(false);
@@ -130,6 +140,7 @@ function FieldBuilder(props){
         window.location.reload(false);
     }
 
+
     //Submit
     const[validLength,setValidLength] = useState(true);
     const[validResult,setValidResult] = useState(true);
@@ -142,22 +153,22 @@ function FieldBuilder(props){
                 break;
             }
         }
-        if(!flag && data.defaultValue.length !== 0){
-            setChoices([...choice,data.defaultValue]);
-        }
         if(choice.length > 50){
             setValidLength(false);
         }else{
             setValidLength(true);
         }
         if(!validDefault && !validDefault2 && validLength && isValid){
+            if(!flag && data.defaultValue.length !== 0){
+                setChoices([...choice,data.defaultValue]);
+            }
             setValidResult(true);
             const res = {
                 label: values.labelForMsg,
                 type: data.required,
                 DefaultValue: data.defaultValue
             };
-            console.log(res);
+            console.log(JSON.stringify(res));
             fetch("http://www.mocky.io/v2/566061f21200008e3aabd919", {
                 method: "POST",
                 headers: {
