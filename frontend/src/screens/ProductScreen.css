@@ -1,0 +1,491 @@
+.productscreen {
+    max-width: 100%;
+    height: 600px;
+    margin-top:0;
+    height: 680px;
+    display: flex;
+    /* border: 2px solid red; */
+    background-image: url('../img/44.jpg');
+    background-size: 750px 755px;
+    opacity: 0.9;
+    /* background: linear-gradient(#141e30, #243b55); */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background: linear-gradient(150deg,#d299c2,#fef9d7); */
+    
+  }
+  
+  .productscreen__left {
+    /* border: 2px solid red; */
+    display: flex;
+    flex: 0.8;
+    margin-top:3%;
+    margin-left: 15%;
+    width: 1800px;
+  }
+  
+  .left__image{
+    /* border: 2px solid red; */
+    width: 500px;
+    height: 300px;
+    margin-right: 2%;
+    /* margin: 3rem; */
+    flex: 0.8;
+    
+  }
+
+  .left__image img{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+  }
+  
+  /* .left__info {
+    margin: 1rem;
+    flex: 0.4;
+    background: #fff;
+    height: fit-content;
+    font-size: 0.9rem;
+  } */
+  .left__info2 {
+    margin: 1rem;
+    flex: 0.5;
+    margin-left: 5%;
+    /* border: 2px solid red; */
+    width: 500px;
+    /* background: #fff; */
+    /* border-radius: 50px;
+    background: linear-gradient(145deg, #5fd4e6, #50b2c2);
+    box-shadow:  30px 30px 56px #4598a6,
+             -30px -30px 56px #6df4ff; */
+             /* border-radius: 6px;
+             background: linear-gradient(145deg, #fff8ff, #e4d1d8);
+             box-shadow:  41px 41px 14px #dfccd3,
+                          -41px -41px 14px #ffffff; */
+                          border-radius: 11px;
+background: linear-gradient(145deg, #fffbff, #e0d4d9);
+box-shadow:  34px 34px 23px #a2999d,
+             -34px -34px 23px #ffffff;
+    height: fit-content;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    
+  }
+
+
+  /* .left__info p  {
+    width: 100px;
+    border-bottom: 1px solid rgba(194, 70, 142, 0.2);
+} */
+
+  .left__info2 p button:hover {
+    border-radius: 5px;
+    color: #fff;
+    /* background: #03e9f4; */
+    background: #f8eaf5;
+    /* box-shadow: 0 0 5px 0 #03e9f4,
+        0 0 25px 0 #03e9f4,
+        0 0 50px 0 #03e9f4,
+        0 0 100px 0 #03e9f4; */
+        box-shadow: 0 0 5px 0 #f8eaf5,
+        0 0 25px 0 #f8eaf5,
+        0 0 50px 0 #f8eaf5,
+        0 0 100px 0 #f8eaf5;
+    transition: all 1s linear;
+}
+
+.left__name{
+  /* padding-top: 5px; */
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+.left_price{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+
+.left_des{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+.left_st{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+.left_qty{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-style: italic;
+}
+.left__info select{
+  width: 100px;
+  text-align: center;
+}
+
+/* .left__info  p button>span {
+    position: absolute;
+}
+
+.left__info p button>span:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    
+    background: -webkit-linear-gradient(left, transparent, #4e1842);
+    left: -100%;
+    top: 0px;
+    animation: line1 1s linear infinite;
+}
+
+@keyframes line1 {
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.left__info p button>span:nth-child(2) {
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(top, transparent, #20081b);
+    right: 0px;
+    top: -100%;
+    animation: line2 1s 0.25s linear infinite;
+}
+
+@keyframes line2 {
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.left__info p .btn >span:nth-child(3) {
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left, #702d62, transparent);
+    left: 100%;
+    bottom: 0px;
+    animation: line3 1s 0.75s linear infinite;
+}
+
+@keyframes line3 {
+
+    50%,
+    100% {
+        left: -100%;
+    }
+}
+
+.left__info p button>span:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    background: -webkit-linear-gradient(top, transparent, #501844);
+    left: 0px;
+    top: 100%;
+    animation: line4 1s 1s linear infinite;
+}
+
+@keyframes line4 {
+
+    50%,
+    100% {
+        top: -100%;
+    }
+} */
+
+
+
+  .left__info2 p > button {
+    /* border: 2px solid red; */
+    margin-left: 100px;
+    text-align: center;
+    grid-column: 1/-1;
+    width: 50%;
+    padding: 10px 16px;
+    margin-left: 25%;
+    background: #edb7cb;
+    color: #f4f4f4;
+    /* border: 1px solid #171717; */
+    border-radius: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-style: italic;
+  }
+  .left__info2 p > button.hover {
+    background:#ed84c3;
+    transition: all .4s ease-in-out;
+  }
+  
+  .left__name {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  
+  .left__info2 > p,
+  .right__info2 > p {
+    padding: 1rem;
+    
+  }
+  
+  .left__info2 > p:last-child,
+  .right__info2 > p:last-child {
+    border: none;
+  }
+  
+  .productscreen__right {
+    flex: 0.2;
+  }
+  
+  .right__info {
+    width: 250px;
+    margin: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .right__info p {
+    padding: 1rem;
+    font-size: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .right__info p > button {
+    grid-column: 1/-1;
+    width: 100%;
+    padding: 10px 16px;
+    background: #171717;
+    color: #f4f4f4;
+    border: 1px solid #171717;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .right__info select {
+    padding: 10px 16px;
+  }
+  
+  @media (max-width: 960px) {
+    .productscreen {
+      flex-direction: column;
+    }
+  
+    .productscreen__left {
+      flex-direction: column;
+      flex: 1;
+    }
+  
+    .left__image {
+      flex: 1;
+    }
+  
+    .left__info2 {
+      flex: 1;
+    }
+  
+    .productscreen__right {
+      flex: 1;
+      padding: 1rem;
+    }
+  
+    .right__info {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
+.ani{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  position:fixed;bottom:0px;right:0px;
+}
+.ani2{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  position:fixed;bottom:0px;right:150px;
+}
+.ani3{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  position:fixed;bottom:0px;left:0px;
+}
+.ani4{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  position:fixed;bottom:0px;left:120px;
+}
+.ani5{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  position:fixed;bottom:0px;left:200px;
+}
+.bubble{
+  width: 100%;
+  height: 100%;
+  /* 径向渐变 */
+  background: radial-gradient(circle at 75% 30%,#fff 5px,#e043b6 8%,#5b5b5b 60%,#ff21c0 100%);
+  border-radius: 50%;
+  /* 阴影 */
+  box-shadow: inset 0 0 20px #fff,
+      inset 10px 0 46px #eaf5fc,
+      inset 80px 0 60px #efcde6,
+      inset -20px -60px 100px #f9f6de,
+      inset 0 50px 140px #f9f6de,
+      0 0 90px #fff;
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: bubble 3s ease-in-out infinite;
+}
+.bubble2{
+  width: 100%;
+  height: 100%;
+  /* 径向渐变 */
+  background: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,#5b5b5b 60%,#ff21c0 100%);
+  border-radius: 50%;
+  /* 阴影 */
+  box-shadow: inset 0 0 20px #fff,
+      inset 10px 0 46px #eaf5fc,
+      inset 80px 0 60px #efcde6,
+      inset -20px -60px 100px #f9f6de,
+      inset 0 50px 140px #f9f6de,
+      0 0 90px #fff;
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: bubble2 5s ease-in-out infinite;
+}
+.bubble3{
+  width: 100%;
+  height: 100%;
+  /* 径向渐变 */
+  background: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,#5b5b5b 60%,#ff21c0 100%);
+  border-radius: 50%;
+  /* 阴影 */
+  box-shadow: inset 0 0 20px #fff,
+      inset 10px 0 46px #eaf5fc,
+      inset 80px 0 60px #efcde6,
+      inset -20px -60px 100px #f9f6de,
+      inset 0 50px 140px #f9f6de,
+      0 0 90px #fff;
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: bubble3 4s ease-in-out infinite;
+}
+.bubble4{
+  width: 100%;
+  height: 100%;
+  /* 径向渐变 */
+  background: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,#5b5b5b 60%,#ff21c0 100%);
+  border-radius: 50%;
+  /* 阴影 */
+  box-shadow: inset 0 0 20px #fff,
+      inset 10px 0 46px #eaf5fc,
+      inset 80px 0 60px #efcde6,
+      inset -20px -60px 100px #f9f6de,
+      inset 0 50px 140px #f9f6de,
+      0 0 90px #fff;
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: bubble4 5s ease-in-out infinite;
+}
+.bubble5{
+  width: 100%;
+  height: 100%;
+  /* 径向渐变 */
+  background: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,#5b5b5b 60%,#ff21c0 100%);
+  border-radius: 50%;
+  /* 阴影 */
+  box-shadow: inset 0 0 20px #fff,
+      inset 10px 0 46px #eaf5fc,
+      inset 80px 0 60px #efcde6,
+      inset -20px -60px 100px #f9f6de,
+      inset 0 50px 140px #f9f6de,
+      0 0 90px #fff;
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: bubble5 3s ease-in-out infinite;
+}
+.shadow{
+  background-color: rgba(0,0,0,0.15);
+  width: 150px;
+  height: 40px;
+  border-radius: 50%;
+  /* 绝对定位 */
+  position: absolute;
+  left: 50%;
+  margin-left: -75px;
+  bottom: -100px;
+  /* 一点点模糊效果 */
+  filter: blur(1px);
+  /* 执行动画：动画名 时长 加速后减速 无限次播放 */
+  animation: shadow 4s ease-in-out infinite;
+}
+
+/* 定义动画 */
+/* 泡泡浮动动画 */
+@keyframes bubble {
+  0%,100%{
+      transform: translateY(0);
+  }
+  50%{
+      transform: translateY(-200px);
+  }
+}
+@keyframes bubble2 {
+  0%,100%{
+      transform: translateY(5px);
+  }
+  50%{
+      transform: translateY(-300px);
+  }
+}
+@keyframes bubble3 {
+  0%,100%{
+      transform: translateY(10px);
+  }
+  50%{
+      transform: translateY(-300px);
+  }
+}
+@keyframes bubble4 {
+  0%,100%{
+      transform: translateY(50px);
+  }
+  50%{
+      transform: translateY(-100px);
+  }
+}
+@keyframes bubble5 {
+  0%,100%{
+      transform: translateY(-20px);
+  }
+  50%{
+      transform: translateY(-200px);
+  }
+}
+/* 投影动画 */
+@keyframes shadow {
+  0%,100%{
+      transform: scale(0.5);
+  }
+  50%{
+      transform: scale(1);
+  }
+}
+ 

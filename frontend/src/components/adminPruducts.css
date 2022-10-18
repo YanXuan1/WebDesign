@@ -1,0 +1,11 @@
+
+.delBtn{
+    width:60px;
+    height:40px;
+    font-size: 14.5px;
+    background: silver;
+}
+.delBtn:hover{
+    background-color:black;
+    color: #fff;
+}
